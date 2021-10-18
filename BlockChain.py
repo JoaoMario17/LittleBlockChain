@@ -24,7 +24,7 @@ class BlockChain:
 	    for bl in self.blocos: 
 		    if bl.indice == bloco.indice:
 			    return False
-	    if bloco.hash[:4] != "aaaa":
+	    if bloco.hash[:6] != "000000":
 		    return False
 	    return True
 

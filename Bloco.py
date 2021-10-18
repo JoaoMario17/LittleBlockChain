@@ -21,10 +21,12 @@ class Bloco:
 
     def calcular_hash(self):
         hash_calculado = []
-        while(hash_calculado[:4] != "aaaa"):
+        print("finding Hash value for block " + str(self.indice))
+        while(hash_calculado[:6] != "000000"):
             dados_hash = (str(self.indice) + str(self.timestamp) + str(self.dados) + str(self.hash_anterior) + str(self.valor_pow))
             hash_calculado = hashlib.sha256(dados_hash.encode("UTF-8")).hexdigest()
             self.valor_pow += 1
+        print("Hash found")
         return hash_calculado
 
 
